@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Workflow</title>
+
+<link href="README_files/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="README_files/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="README_files/style.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<section class="page-header">
+<h1 class="title toc-ignore project-name">Workflow</h1>
+<h4 class="author project-author">Jose Rodrvguez Maldonado</h4>
+<address class="author_afil">
+Trabajo final. Herramientas y algoritmos en Bioinformática<br><a class="author_email" href="mailto:#"><a href="mailto:jrmaj0a@uma.es">jrmaj0a@uma.es</a></a>
+</address>
+<h4 class="date project-date">Octubre de 2018</h4>
+</section>
+
+
+
+<section class="main-content">
+<p>Vamos a tener diferentes formas de ejecutar este workflow. En caso de duda, o si nos equivocamos, nos aparecerá una ayuda como esta:</p>
+<pre><code>usage: ./work.sh [-svbr] [-l number] [-p number] [-t number]
+  -s     Saltamos la descarga y enriquecimiento de los datos
+  -v     Dibujar volcano plot
+  -r     Saltamos análisis de supervivencia y clusters de pacientes
+  -b     No balanceamos los datos
+  -l &lt;number&gt;   Fija el LogFC
+  -f &lt;COX,RFI,NONE&gt;    Elegimos el método de selección de variables.
+  -p number     Elige P-value
+  -t number     Elige el paso (step) para replicar los datos
+</code></pre>
+<p>Algunos ejemplos de como ejecutar el flujo:</p>
+<p>Ejecutar todo el flujo con los parámetros por defecto y guardando el volcano plot.</p>
+<p><code>./work.sh -v</code></p>
+<p>Ejecutar todo el flujo con los parámetros por defecto y guardando el volcano plot, pero sin tener que volver a descargar los datos.</p>
+<p><code>./work.sh -v -s</code></p>
+<p>Ejecutar todo el flujo con los parámetros por defecto y guardando el volcano plot, pero sin tener que volver a descargar los datos y definiendo un paso.</p>
+<p><code>./work.sh -v -s -t 5</code></p>
+<p>Ejecutar todo el flujo con los parámetros por defecto y guardando el volcano plot, pero sin tener que volver a descargar los datos, definiendo un paso, el p-value y el lfc.</p>
+<p><code>./work.sh -v -s -t 5 -p 0.001 -l 2</code></p>
+<p>Como vemos, podemos combinar las diferentes opciones que tenemos a nuestro gusto.</p>
+</section>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
